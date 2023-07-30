@@ -49,15 +49,15 @@ namespace AwesomeNetwork
             services
                 .AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connection))
                 .AddUnitOfWork()
-                    .AddCustomRepository<Message, MessageRepository>()
+                .AddCustomRepository<Message, MessageRepository>()
+                .AddCustomRepository<Friend, FriendsRepository>()
                 .AddIdentity<User, IdentityRole>(opts => {
-                    opts.Password.RequiredLength = 5;   
-                    opts.Password.RequireNonAlphanumeric = false;  
-                    opts.Password.RequireLowercase = false; 
-                    opts.Password.RequireUppercase = false; 
+                    opts.Password.RequiredLength = 5;
+                    opts.Password.RequireNonAlphanumeric = false;
+                    opts.Password.RequireLowercase = false;
+                    opts.Password.RequireUppercase = false;
                     opts.Password.RequireDigit = false;
-                })
-                    .AddEntityFrameworkStores<ApplicationDbContext>();
+                }).AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddControllersWithViews();
             services.AddRazorPages();
