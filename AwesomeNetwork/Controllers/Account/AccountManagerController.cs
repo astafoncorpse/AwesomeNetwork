@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using AwesomeNetwork.Data;
 using AwesomeNetwork.Data.Repository;
 using AwesomeNetwork.Data.UoW;
 using AwesomeNetwork.Extentions;
@@ -38,7 +39,7 @@ namespace AwesomeNetwork.Controllers.Account
         public async Task<IActionResult> Generate()
         {
 
-            var usergen = new GenetateUsers();
+            var usergen = new GenerateUsers();
             var userlist = usergen.Populate(35);
 
             foreach (var user in userlist)
