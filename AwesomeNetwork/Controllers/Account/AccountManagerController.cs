@@ -102,7 +102,7 @@ namespace AwesomeNetwork.Controllers.Account
 
         [Route("Edit")]
         [HttpGet]
-        public IActionResult Edit()
+        public  IActionResult Edit()
         {
             var user = User;
 
@@ -310,5 +310,7 @@ namespace AwesomeNetwork.Controllers.Account
             var model = await GenerateChat(id);
             return View("Chat", model);
         }
+      
+        
     }
 }
